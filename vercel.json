@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
   "builds": [
     {
       "src": "server/node-build.ts",
@@ -9,7 +10,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/spa"
+        "distDir": "dist/spa",
+        "buildCommand": "npm run build:client"
       }
     }
   ],
@@ -22,8 +24,5 @@
       "src": "/(.*)",
       "dest": "/dist/spa/$1"
     }
-  ],
-  "env": {
-    "MONGODB_URI": "@mongodb_uri"
-  }
+  ]
 }

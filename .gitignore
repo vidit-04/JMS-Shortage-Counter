@@ -45,3 +45,5 @@ coverage/
 
 # Local development
 .cache/
+
+.vercel
