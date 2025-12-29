@@ -11,9 +11,9 @@ This guide will help you deploy the JMS Shortage Counter application to Vercel w
 ## MongoDB Setup
 
 ### Connection String
-Your MongoDB connection string is already configured in the `.env` file:
+Your MongoDB connection string should be configured in the `.env` file (locally) and in Vercel Environment Variables (for deployments):
 ```
-MONGODB_URI=mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/?appName=JMS
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-host>/<db>?retryWrites=true&w=majority
 ```
 
 ### Database Structure
@@ -32,7 +32,7 @@ npm install
 ### 2. Environment Variables
 Ensure your `.env` file contains:
 ```env
-MONGODB_URI=mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/?appName=JMS
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-host>/<db>?retryWrites=true&w=majority
 ```
 
 ### 3. Run Development Server
@@ -76,7 +76,7 @@ npm start
    - Navigate to "Environment Variables"
    - Add the following variable:
      - **Name**: `MONGODB_URI`
-     - **Value**: `mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/?appName=JMS`
+       - **Value**: `mongodb+srv://<username>:<password>@<cluster-host>/<db>?retryWrites=true&w=majority`
      - **Environments**: Select all (Production, Preview, Development)
 
 4. **Deploy**

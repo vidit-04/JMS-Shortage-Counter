@@ -17,7 +17,7 @@ Your JMS Shortage Counter is fully tested and ready for production deployment!
 - ✅ **All API endpoints** - Verified and working
 
 ### Database Configuration
-- ✅ **MongoDB Atlas connected** - `jms.ykn1oes.mongodb.net`
+- ✅ **MongoDB Atlas connected** - `<cluster-host>`
 - ✅ **Persistent storage enabled** - All data saved to MongoDB
 - ✅ **No demo data** - Starts with clean database
 - ✅ **Data never auto-deleted** - Manual deletion only
@@ -50,7 +50,7 @@ git push -u origin main
 ### Step 3: Add Environment Variable (1 minute)
 In Vercel Dashboard → Settings → Environment Variables:
 - **Name**: `MONGODB_URI`
-- **Value**: `mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/?appName=JMS`
+- **Value**: `mongodb+srv://<username>:<password>@<cluster-host>/<db>?retryWrites=true&w=majority`
 - **Environments**: All (Production, Preview, Development)
 
 Then **Redeploy** from the Deployments tab.
@@ -61,7 +61,7 @@ Then **Redeploy** from the Deployments tab.
 
 ### Database (MongoDB Atlas)
 ```
-Connection: mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/
+Connection: mongodb+srv://<username>:<password>@<cluster-host>/
 Database: jms
 Collections: tags, products
 Persistence: Real-time, all operations saved immediately

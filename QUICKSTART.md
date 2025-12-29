@@ -35,7 +35,7 @@ In Vercel Dashboard:
 1. Go to your project → Settings → Environment Variables
 2. Add new variable:
    - **Key**: `MONGODB_URI`
-   - **Value**: `mongodb+srv://jms:jms22rms@jms.ykn1oes.mongodb.net/?appName=JMS`
+   - **Value**: `mongodb+srv://<username>:<password>@<cluster-host>/<db>?retryWrites=true&w=majority`
    - **Environments**: Select all (Production, Preview, Development)
 3. Click "Save"
 
@@ -62,9 +62,9 @@ Test these endpoints:
 
 Before deploying, verify:
 - ✅ MongoDB connection string is in `.env` file
-- ✅ All dependencies are installed (`npm install`)
-- ✅ Build succeeds (`npm run build`)
-- ✅ TypeScript compiles (`npm run typecheck`)
+- ✅ All dependencies are installed (`pnpm install`)
+- ✅ Build succeeds (`pnpm build`)
+- ✅ TypeScript compiles (`pnpm typecheck`)
 
 ---
 
@@ -73,21 +73,21 @@ Before deploying, verify:
 ### First Time Setup
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run dev
+pnpm dev
 ```
 
 Visit: `http://localhost:8080`
 
 ### Common Commands
 ```bash
-npm install          # Install dependencies
-npm run dev          # Start dev server
-npm run build        # Build for production
-npm start            # Run production build locally
-npm run typecheck    # Check TypeScript
+pnpm install          # Install dependencies
+pnpm dev              # Start dev server
+pnpm build            # Build for production
+pnpm start            # Run production build locally
+pnpm typecheck        # Check TypeScript
 ```
 
 ---

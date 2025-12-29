@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "installCommand": "npm install",
-  "buildCommand": "npm run build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm build",
   "builds": [
     {
       "src": "server/node-build.ts",
@@ -12,7 +12,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist/spa",
-        "buildCommand": "npm run build:client"
+        "buildCommand": "pnpm build:client"
       }
     }
   ],
