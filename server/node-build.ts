@@ -1,7 +1,9 @@
 import { createServer } from "./index";
-import serverless from "serverless-http";
 
 const app = createServer();
 
-// Export serverless handler for Vercel
-export default serverless(app);
+// Vercel's Node runtime passes (req, res). An Express app is itself a request handler.
+// Export a handler compatible with @vercel/node.
+export default function handler(req: any, res: any) {
+	return app(req, res);
+}
