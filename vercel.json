@@ -4,7 +4,7 @@
   "buildCommand": "pnpm build",
   "builds": [
     {
-      "src": "server/node-build.ts",
+      "src": "api/[...all].ts",
       "use": "@vercel/node"
     },
     {
@@ -19,7 +19,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/node-build.ts"
+      "dest": "/api/[...all].ts"
     },
     {
       "src": "/(.*)",
