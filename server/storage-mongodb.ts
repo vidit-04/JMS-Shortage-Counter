@@ -1,5 +1,5 @@
 import { MongoClient, Db, Collection } from "mongodb";
-import { Tag, Product } from "@shared/api";
+import { Tag, Product } from "../shared/api";
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
 const DB_NAME = "jms";

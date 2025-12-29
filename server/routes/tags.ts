@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import { tagsDB, productsDB } from "../db";
-import { CreateTagRequest, TagsResponse, TagResponse, DeleteResponse } from "@shared/api";
+import { CreateTagRequest, TagsResponse, TagResponse, DeleteResponse } from "../../shared/api";
 
 export const getTags: RequestHandler = async (_req, res) => {
   try {

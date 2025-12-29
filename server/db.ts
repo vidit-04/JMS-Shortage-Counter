@@ -1,4 +1,4 @@
-import { Tag, Product, ProductStatus } from "@shared/api";
+import { Tag, Product, ProductStatus } from "../shared/api";
 import { 
   loadTags, 
   loadProducts, 

@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
-import { Tag, Product } from "@shared/api";
+import { Tag, Product } from "../shared/api";
 
 const STORAGE_DIR = join(process.cwd(), ".data");
 const TAGS_FILE = join(STORAGE_DIR, "tags.json");

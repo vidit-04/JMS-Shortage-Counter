@@ -6,7 +6,7 @@ import {
   ProductsResponse,
   ProductResponse,
   DeleteResponse,
-} from "@shared/api";
+} from "../../shared/api";
 
 export const getProducts: RequestHandler = async (_req, res) => {
   try {
