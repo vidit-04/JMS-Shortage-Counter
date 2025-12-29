@@ -21,7 +21,12 @@ export async function connectDB(): Promise<Db> {
     }
 
     console.log("🔌 Connecting to MongoDB...");
-    client = new MongoClient(MONGODB_URI);
+    client = new MongoClient(MONGODB_URI, {
+      // In serverless, hanging connections often turn into platform 500/timeout.
+      // Fail fast so handlers can return a useful error quickly.
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 5000,
+    });
     await client.connect();
     db = client.db(DB_NAME);
     console.log("✅ Connected to MongoDB");
